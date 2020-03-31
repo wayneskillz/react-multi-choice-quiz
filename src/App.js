@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import quizQuestions from './api/quizQuestions';
-import Quiz from './components/Quiz';
-import Result from './components/Result';
-import logo from './svg/logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import quizQuestions from "./api/quizQuestions";
+import Quiz from "./components/Quiz";
+import Result from "./components/Result";
+import Landing from "./components/Landing";
+import logo from "./svg/logo.svg";
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
@@ -12,11 +13,12 @@ class App extends Component {
     this.state = {
       counter: 0,
       questionId: 1,
-      question: '',
+      question: "",
       answerOptions: [],
-      answer: '',
+      answer: "",
       answersCount: {},
-      result: ''
+      result: "",
+      landing: true
     };
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
@@ -81,7 +83,7 @@ class App extends Component {
       questionId: questionId,
       question: quizQuestions[counter].question,
       answerOptions: quizQuestions[counter].answers,
-      answer: ''
+      answer: ""
     });
   }
 
@@ -98,7 +100,7 @@ class App extends Component {
     if (result.length === 1) {
       this.setState({ result: result[0] });
     } else {
-      this.setState({ result: 'Undetermined' });
+      this.setState({ result: "Undetermined" });
     }
   }
 
@@ -119,14 +121,24 @@ class App extends Component {
     return <Result quizResult={this.state.result} />;
   }
 
+  showLanding() {
+    return <Landing {...this.state} />;
+  }
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>React Quiz</h2>
-        </div>
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
+        {this.state.landing ? (
+          this.showLanding()
+        ) : (
+          <React.Fragment>
+            <div className="App-header">
+              <img src={logo} className="App-logo" alt="logo" />
+              <h2> Quiz</h2>
+            </div>
+            {this.state.result ? this.renderResult() : this.renderQuiz()}
+          </React.Fragment>
+        )}
       </div>
     );
   }

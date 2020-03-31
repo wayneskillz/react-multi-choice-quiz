@@ -3,12 +3,76 @@
   height: 80px;
 }
 
+.landing-img {
+  height: 300px; 
+}
+
 .App-header {
-  background-color: #222;
-  padding: 20px;
+  background-color: #57485f;
+  padding: 20px; 
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.App-header p {
+  padding: 10px;
+}
+.intro-rows {
+  padding-top: 20;
+}
+
+.landing-bg {
+  background-color: #57485f;
+  height: 100vh;
+  width: '100%';
+  /* padding: 20px; */
   color: white;
   text-align: center;
 }
+
+
+.modal-header .close {
+  color: #fff !important;
+  padding: 1rem 1rem;
+  margin: -1rem -1rem -1rem auto;
+}
+
+.icon-q {
+  color: #fff !important;
+}
+.modal-header {
+  background: #57485f !important;
+  color: #fff !important;
+}
+
+.questions-modal {
+  min-width: 95vw;
+  height: 95vh;
+}
+
+/* 
+
+.btn-outline-secondary {
+    color: #fdfdfd !important;
+    /* font-weight: bold; */
+    /* border-color: #e6d7dd !important; */
+/* }  */
+
+
+btn .btn-outline-secondary {
+  color: #fff !important;
+  background-color: transparent !important;
+  border: 2px solid #a6c !important;
+}
+
+.btn-outline-secondary:hover {
+    color: #fff !important;
+    background: #ef6f9f !important;
+    /* font-weight: bold; */
+    border-color: #ef6f9f !important;
+}
+
 
 .App-intro {
   font-size: large;

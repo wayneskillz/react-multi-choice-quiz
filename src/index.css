@@ -6,6 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+    overflow: hidden; 
+    /* overflow-y: auto; */
 }
 
 code {
@@ -24,19 +26,19 @@ body {
   font-family: sans-serif;
 }
 
-.container {
+/* .container {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
   background: #fff;
   border-radius: 3px;
-}
+} */
 
-@media (min-width: 769px) {
+/* @media (min-width: 769px) {
   .container {
     margin: 2.5rem auto;
   }
-}
+} */
 
 /* Result Component */
 .result {
@@ -77,6 +79,7 @@ body {
   opacity: 0;
 }
 
+
 .radioCustomButton,
 .radioCustomLabel {
   display: inline-block;
@@ -110,9 +113,9 @@ body {
 
 .radioCustomButton:checked ~ .radioCustomLabel:before {
   content: '';
-  background: #8bc53f url(./svg/icon-check.svg) no-repeat;
+  background: #57485f url(./svg/icon-check.svg) no-repeat;
   background-size: 27px;
-  border-color: #8bc53f;
+  border-color: #57485f;
 }
 
 /* Animation */
